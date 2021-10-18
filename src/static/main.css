@@ -1,0 +1,27 @@
+:root {
+    --max-width: 767px;
+}
+
+body,
+html {
+    font-size: 18px;
+    font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+body > header,
+body > main,
+body > footer {
+    max-width: var(--max-width, 800px);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+body > main {
+    min-height: 50vh;
+}
+
+body > header,
+body > footer {
+    background-color: #f0f0f0;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "node-http-server",
+  "version": "1.0.0",
+  "description": "Node.js example server starter project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "esbuild": "0.13.8",
+    "express": "4.17.1",
+    "hbs": "4.1.2",
+    "lit": "2.0.2",
+    "mime-types": "2.1.33",
+    "page": "1.11.6"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  },
+  "keywords": []
+}

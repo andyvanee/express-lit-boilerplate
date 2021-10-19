@@ -12,8 +12,8 @@ export default [
         layout: "index"
     },
     {
-        path: "/login",
-        component: "ui-login",
+        path: "/accounts/login",
+        component: "div",
         title: "Login",
         layout: "login"
     }

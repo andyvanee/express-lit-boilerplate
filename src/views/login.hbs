@@ -18,9 +18,23 @@
     </ui-nav>
   </header>
   <main>
-    <form action="/login" method="POST">
-      <input type="text" name="email">
-      <button type="submit">Login</button>
+    <form action="/accounts/login" method="POST">
+      {{#if error}}
+      <div class="form-field error">
+        {{error}}
+      </div>
+      {{/if}}
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" name="email" value="{{email}}">
+      </div>
+      <div class="form-field">
+        <label>Password</label>
+        <input type="password" name="password" value="{{password}}">
+      </div>
+      <div class="form-field">
+        <button type="submit">Login</button>
+      </div>
     </form>
   </main>
   <footer></footer>

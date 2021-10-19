@@ -25,3 +25,12 @@ body > header,
 body > footer {
     background-color: #f0f0f0;
 }
+
+.form-field {
+    margin: 1rem 0;
+}
+
+.form-field label {
+    display: block;
+    margin: 1rem 0 0.25rem;
+}

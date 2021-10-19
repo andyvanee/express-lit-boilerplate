@@ -16,7 +16,16 @@
     <ui-nav>
       <ui-nav-item brand href="/" label="Home" />
       <ui-nav-item href="/pages/one" label="One" />
-      <ui-nav-item href="/login" label="Login" />
+      {{#if currentUser}}
+      <ui-nav-item label="{{currentUser.email}}">
+        <div class="account-details">
+          <a href="/accounts/{{currentUser.id}}">Account Details</a>
+          <a href="/accounts/logout">Logout</a>
+        </div>
+      </ui-nav-item>
+      {{else}}
+      <ui-nav-item href="/accounts/login" label="Login" />
+      {{/if}}
     </ui-nav>
   </header>
   <main>

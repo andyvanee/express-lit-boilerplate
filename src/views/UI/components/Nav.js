@@ -5,49 +5,34 @@ class Nav extends BaseElement {
         return css`
             :host {
                 display: block;
+                margin: 0 -0.5rem;
             }
 
             nav {
                 display: grid;
-                grid-template-columns: auto 1fr auto;
+                grid-template-columns: auto 1fr;
                 gap: 1.5rem;
                 padding: 0.25rem 0;
                 align-items: center;
             }
-
-            ul {
-                list-style: none;
-                display: inline-block;
-                margin: 0;
-                padding: 0;
+            .items {
+                text-align: right;
+            }
+            .account-details {
+                background-color: white;
+                border: 1px solid #ddd;
+                padding: 1rem;
             }
 
-            li {
-                display: inline-block;
-                padding: 0 0.5rem;
-            }
-
-            a {
-                display: block;
-                padding: 0.5rem;
-                text-decoration: none;
+            .account-details a {
                 color: inherit;
-                font-size: 0.85rem;
-                letter-spacing: 0.03rem;
-            }
-
-            .brand a {
-                padding-left: 0;
+                text-decoration: none;
             }
         `
     }
 
     get items() {
-        return [...this.querySelectorAll("ui-nav-item")].map((i) => ({
-            brand: i.brand,
-            href: i.href,
-            label: i.label
-        }))
+        return [...this.querySelectorAll("ui-nav-item")]
     }
 
     get brandItems() {
@@ -62,19 +47,11 @@ class Nav extends BaseElement {
         return html`
             <nav>
                 <div class="brand">
-                    ${this.brandItems.map(
-                        (i) => html` <a href=${i.href}>${i.label}</a> `
-                    )}
+                    ${this.brandItems}
                 </div>
-                <ul>
-                    ${this.navItems.map(
-                        (i) => html`
-                            <li>
-                                <a href=${i.href}>${i.label}</a>
-                            </li>
-                        `
-                    )}
-                </ul>
+                <div class="items">
+                    ${this.navItems}
+                </div>
             </nav>
         `
     }

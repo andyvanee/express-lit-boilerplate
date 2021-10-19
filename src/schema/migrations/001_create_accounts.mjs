@@ -1,7 +1,8 @@
-import * as knex from "knex"
+// eslint-disable-next-line no-unused-vars
+import * as _knex from "knex"
 
 /**
- * @param db {knex.Knex}
+ * @param db {_knex.Knex}
  */
 export const up = async (db) => {
     await db.schema.createTable("accounts", (t) => {

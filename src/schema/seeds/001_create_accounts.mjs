@@ -1,8 +1,9 @@
-import * as knex from "knex"
+// eslint-disable-next-line no-unused-vars
+import * as _knex from "knex"
 import bcrypt from "bcrypt"
 
 /**
- * @param db {knex.Knex}
+ * @param db {_knex.Knex}
  */
 export const seed = async (db) => {
     await db("accounts").del()

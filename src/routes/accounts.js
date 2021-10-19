@@ -1,5 +1,5 @@
 import express from "express"
-import connect from "../database.js"
+import database from "../database.js"
 import bcrypt from "bcrypt"
 
 const app = express.Router()
@@ -12,7 +12,7 @@ app.post("/login", async (req, res) => {
     if (!(email && password)) return err("login error")
 
     // TODO: email & password verify
-    const account = await connect()("accounts").where({ email }).first()
+    const account = await database("accounts").where({ email }).first()
     if (!account) return err("account not found")
 
     const valid = await bcrypt.compare(password, account.password_hash)

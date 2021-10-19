@@ -1,4 +1,3 @@
-import dotenv from "dotenv"
 import path from "path"
 import express from "express"
 import auth from "./routes/auth.js"
@@ -6,16 +5,6 @@ import accounts from "./routes/accounts.js"
 import build from "./middleware/build.js"
 import session from "./middleware/session.js"
 import routes from "./views/UI/routes.js"
-
-dotenv.config()
-
-const requiredEnv = ["TOKEN_SECRET", "STORAGE_PATH"]
-for (const e of requiredEnv) {
-    if (!process.env[e]) {
-        console.error({ requiredEnv })
-        throw new Error(`Missing env ${e}`)
-    }
-}
 
 const app = express()
 export default app

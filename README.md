@@ -7,7 +7,8 @@ This is a JavaScript project boilerplate with the following features:
 -   Frontend includes `lit`, `esbuild`, `page`
 -   Backend includes `express`, `knex`, `sqlite3`
 
-Deployment Notes:
+Environment Variables:
 
--   Requires a `TOKEN_SECRET` environment variable for session
--   Requires a (optionally blank) database file at `./data/system.db`
+-   `TOKEN_SECRET` used for session/token encryption
+-   `AUTO_MIGRATE` can be set to `false` to skip auto migration
+-   `STORAGE_PATH` to set storage directory location

@@ -1,6 +1,6 @@
 import session from "express-session"
 import SessionKnex from "connect-session-knex"
-import db from "../database.js"
+import connect from "../database.js"
 
 export default () => {
     const knexSessionStore = SessionKnex(session)
@@ -11,7 +11,7 @@ export default () => {
         saveUninitialized: false,
         unset: "destroy",
         store: new knexSessionStore({
-            knex: db,
+            knex: connect(),
             tablename: "sessions",
             sidfieldname: "sid",
             createtable: true,
